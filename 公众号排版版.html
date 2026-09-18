@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"></head>
+<body style="margin:0;padding:0;background:#fff;">
+<section style="max-width:677px;margin:0 auto;padding:0 8px;font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;">
+
+<section style="background:linear-gradient(135deg,#0b0e1a,#1a120b);padding:30px 24px 26px;">
+<p style="color:#ffd166;font-size:13px;letter-spacing:3px;margin:0;font-weight:bold;">🚦 DEPLOY GUARD · 部署安全守卫</p>
+<p style="color:#fff;font-size:24px;font-weight:bold;margin:10px 0 6px;line-height:1.4;">今天是周五下午<br>你确定要<span style="color:#ffd166;">部署</span>？</p>
+<p style="color:#8b949e;font-size:13px;margin:0;">8项安全检查 · 一条命令 · 3秒出判定</p>
+</section>
+
+<section style="margin:22px 0 6px;">
+<p style="font-size:15px;color:#24292f;line-height:1.9;margin:0;">每个开发者都干过至少其中一件：</p>
+<p style="font-size:15px;color:#24292f;line-height:2.2;margin:8px 0 0;">
+· 周五下午部署，周一早上回来救火<br/>
+· 没跑测试就上线，"应该没问题吧"<br/>
+· 改了数据库，没写回滚方案<br/>
+· 半夜偷偷发包，心想"别被发现"</p>
+<p style="font-size:15px;color:#24292f;line-height:1.9;margin:12px 0 0;">我做了一个开源工具：<strong style="color:#1a7f37;">deploy-guard</strong>。在你执行部署前，帮你自动检查 8 项安全条件。</p>
+</section>
+
+<section style="background:#0d1117;border-radius:10px;padding:18px 20px;margin:18px 0;">
+<p style="font-family:monospace;font-size:14px;color:#3fb950;margin:0;line-height:1.7;">
+<span style="color:#8b949e;">$</span> bash deploy-guard.sh</p>
+<p style="font-family:monospace;font-size:14px;color:#f85149;margin:8px 0 0;">🚫 NO-GO — Fix these first:</p>
+<p style="font-family:monospace;font-size:14px;color:#f85149;margin:2px 0 0;">  • It's Friday afternoon. You KNOW how this ends.</p>
+<p style="font-family:monospace;font-size:14px;color:#f85149;margin:2px 0 0;">  • .env is tracked by git!</p>
+<p style="font-family:monospace;font-size:14px;color:#ffd166;margin:2px 0 0;">⚠️ Found test script — did you run npm test?</p>
+<p style="font-family:monospace;font-size:14px;color:#3fb950;margin:8px 0 0;">Checks: 5 passed · 2 warnings · 2 critical</p>
+</section>
+
+<section style="margin:24px 0 0;">
+<p style="font-size:17px;font-weight:bold;color:#24292f;margin:0 0 14px;">📋 8项检查</p>
+
+<section style="background:#f6f8fa;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+<p style="font-size:14px;color:#24292f;margin:0;line-height:1.8;">📅 <strong>日期检查</strong><br/><span style="color:#57606a;font-size:13px;">周五下午？节假日？凌晨3点？——经典送命时段</span></p>
+</section>
+<section style="background:#f6f8fa;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+<p style="font-size:14px;color:#24292f;margin:0;line-height:1.8;">📝 <strong>Git状态</strong><br/><span style="color:#57606a;font-size:13px;">未提交的修改、未推送的commit、WIP消息</span></p>
+</section>
+<section style="background:#f6f8fa;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+<p style="font-size:14px;color:#24292f;margin:0;line-height:1.8;">🧪 <strong>测试提醒</strong><br/><span style="color:#57606a;font-size:13px;">检测到测试脚本但可能没跑</span></p>
+</section>
+<section style="background:#f6f8fa;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+<p style="font-size:14px;color:#24292f;margin:0;line-height:1.8;">🔐 <strong>密钥泄露</strong><br/><span style="color:#57606a;font-size:13px;">.env 文件被 git 跟踪——数据库密码裸奔中</span></p>
+</section>
+<section style="background:#f6f8fa;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+<p style="font-size:14px;color:#24292f;margin:0;line-height:1.8;">🏷 <strong>TODO检查</strong><br/><span style="color:#57606a;font-size:13px;">暂存的代码里有未完成的 TODO/FIXME</span></p>
+</section>
+<section style="background:#f6f8fa;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+<p style="font-size:14px;color:#24292f;margin:0;line-height:1.8;">🌿 <strong>分支检查</strong><br/><span style="color:#57606a;font-size:13px;">直接在 main 上操作？用 feature branch 吧</span></p>
+</section>
+<section style="background:#f6f8fa;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+<p style="font-size:14px;color:#24292f;margin:0;line-height:1.8;">💾 <strong>磁盘空间</strong><br/><span style="color:#57606a;font-size:13px;">部署到一半磁盘满了才是最惨的</span></p>
+</section>
+<section style="background:#f6f8fa;border-radius:10px;padding:14px 16px;margin-bottom:10px;">
+<p style="font-size:14px;color:#24292f;margin:0;line-height:1.8;">🧠 <strong>内存检查</strong><br/><span style="color:#57606a;font-size:13px;">部署过程触发 OOM 就精彩了</span></p>
+</section>
+</section>
+
+<section style="margin:22px 0 0;">
+<p style="font-size:17px;font-weight:bold;color:#24292f;margin:0 0 12px;">🔧 三种使用方式</p>
+<section style="background:#f6f8fa;border-radius:10px;padding:14px 16px;">
+<p style="font-size:14px;color:#24292f;margin:0;line-height:2.2;">
+<strong>终端手动检查：</strong><br/>
+<code style="background:#e8ecf7;padding:2px 8px;border-radius:4px;">bash deploy-guard.sh</code><br/><br/>
+<strong>CI/CD 集成：</strong><br/>
+<code style="background:#e8ecf7;padding:2px 8px;border-radius:4px;">bash deploy-guard.sh --strict && deploy</code><br/><br/>
+<strong>跳过周末检查（on-call 用）：</strong><br/>
+<code style="background:#e8ecf7;padding:2px 8px;border-radius:4px;">bash deploy-guard.sh --skip-weekend</code></p>
+</section>
+</section>
+
+<section style="margin:22px 0 0;">
+<p style="font-size:17px;font-weight:bold;color:#24292f;margin:0 0 8px;">⚠️ 坦白说</p>
+<p style="font-size:14px;color:#57606a;line-height:1.9;margin:0;">这个工具不会阻止你部署——它只是提醒你"你确定吗？"。最终决定权在你。它也不会替代完整的 CI/CD 流程。它是一个 <strong>3 秒安全网</strong>，不是银弹。</p>
+</section>
+
+<section style="background:#ddf4e4;border-radius:12px;padding:18px;margin:22px 0;">
+<p style="font-size:15px;color:#116329;margin:0;line-height:1.8;">
+<strong>📦 开源地址</strong><br/>
+github.com/tomlen045/deploy-guard<br/><br/>
+MIT 协议 · 零依赖 · 一行命令 · 支持CI/CD集成</p>
+</section>
+
+<section style="background:#fff8c5;border-radius:10px;padding:16px;margin:18px 0;">
+<p style="font-size:14px;color:#9a6700;margin:0;line-height:1.8;"><strong>💬 聊一句</strong><br/>你经历过最惨的部署事故是什么？周五部署？改了数据库没备份？评论区说出你的故事。</p>
+</section>
+
+<section style="border-top:1px solid #d0d7de;padding-top:18px;margin-top:24px;">
+<p style="font-size:13px;color:#8b949e;text-align:center;margin:0 0 8px;">🔍 搜「小薅薅」· 每天一个运维好工具</p>
+<p style="font-size:12px;color:#c99b7a;text-align:center;margin:0;">deploy-guard · MIT 开源 · 下期再见</p>
+</section>
+
+</section></body></html>
